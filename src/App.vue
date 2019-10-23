@@ -6,7 +6,7 @@
         <div id="top_left">
           <h1 class="logo"><a hidefocus="true" href="#"><img src="./assets/img/topbar.png" alt=""/></a></h1>
           <ul class="menu">
-            <li><router-link to="/">发现音乐</router-link></li>
+            <li class="find"><router-link to="/">发现音乐</router-link><sub class="cor"></sub></li>
             <li><router-link to="/my_music">我的音乐</router-link></li>
             <li><router-link to="/friend">朋友</router-link></li>
             <li><router-link to="/shop">商城</router-link></li>
@@ -30,6 +30,7 @@
     </div>
     <!-- 导航区域 -->
     <router-view></router-view>
+    <router-view name="children"></router-view>
     <!-- 底部区域 -->
     <div id="foot">
       <div id="foot_list">
@@ -152,6 +153,25 @@ export default {
     height:69px;
     background-color:#242424;
     list-style:none;
+  }
+  .find{
+    position: relative;
+    background-color: #000;
+    z-index: 99;
+  }
+  .cor{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 64px;
+    width: 12px;
+    height: 7px;
+    color: #fff;
+    margin-left: -6px;
+    overflow: hidden;
+    background-position: -226px 0;
+    background: url("./assets/img/topbar.png") no-repeat 0 9999px;
+    z-index: 99;
   }
   .menu a{
     text-decoration: none;
